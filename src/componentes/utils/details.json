@@ -1,0 +1,46 @@
+
+[
+    {
+      "id": 1,
+      "title": "CANGURO LOS ANGELES",
+      "price": 563,
+      "stock": 10,
+      "pictureUrl": "https://bensimonar.vtexassets.com/arquivos/ids/764207-800-1200?v=637919524450300000&width=800&height=1200&aspect=true",
+      "category": "instruments"
+    }, 
+    {
+      "id": 2,
+      "title": "PARKA NEW BELGA",
+      "price": 357,
+      "stock": 9,
+      "pictureUrl": "https://bensimonar.vtexassets.com/arquivos/ids/748074-800-1200?v=637884113759170000&width=800&height=1200&aspect=true",
+      "category": {
+        "id": 4,
+        "name": "hardware"
+      }
+    }, 
+    {
+      "id": 3,
+      "title": "CAMPERA VINTAGE CORDERO",
+      "price": 95,
+      "stock": 6,
+      "pictureUrl": "https://bensimonar.vtexassets.com/arquivos/ids/738642-800-1200?v=637878986800770000&width=800&height=1200&aspect=true",
+      "category": "instruments"
+    }, 
+    {
+      "id": 4,
+      "title": "PARKA MONTREAL",
+      "price": 699,
+      "stock": 10,
+      "pictureUrl": "https://bensimonar.vtexassets.com/arquivos/ids/730427-800-1200?v=637867601814130000&width=800&height=1200&aspect=true",
+      "category": "instruments"
+    }, 
+    {
+      "id": 5,
+      "title": "PILOTO JOHN",
+      "price": 560,
+      "stock": 3,
+      "pictureUrl": "https://bensimonar.vtexassets.com/arquivos/ids/577029-800-1200?v=637774203221330000&width=800&height=1200&aspect=true",
+      "category": "instruments"
+    }
+  ]
