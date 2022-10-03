@@ -5,7 +5,7 @@ import { GContext } from "../Cart/CartContext";
 
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
-  const { cartItems, sendOrder } = useContext(GContext);
+  const { cartItems, sendOrder, removeItem } = useContext(GContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const inputs = document.getElementsByTagName("input");
@@ -48,6 +48,7 @@ const Cart = () => {
                   <p className="card-text">{`Total $${item.price * quantity
                     } | `}</p>
                 </div>
+                <button onClick={()=>removeItem(product)}>Eliminar</button>
               </div>
             </>
           ))}

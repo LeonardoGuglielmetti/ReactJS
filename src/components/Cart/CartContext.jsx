@@ -13,10 +13,13 @@ import {
  export const GContext = createContext();
 
 
-
-
 const CartContext = (props) => {
   const [cartItems, setCartItems] = useState([]);
+
+const removeItem = (itemRemove) => {
+  const removedCart = cart.filter(product => product !== itemRemove);
+  setCart(removedCart); 
+}
 
   const sendOrder = async (totalPrice, buyerData) => {
     const db = getFirestore();
@@ -61,6 +64,7 @@ const CartContext = (props) => {
         cartItems,
         setCartItems,
         sendOrder,
+        removeItem,
         // updateOrder,
         // multipleUpdates,
       }}
