@@ -24,8 +24,8 @@ const Cart = () => {
   return (
     <>
       {
-        !cart.length
-          ? < div className={styles.emptyContainer}>
+        !cartItems.length
+          ? < div className="emptyContainer">
             <p>No hay productos en el carrito</p>
             <button>
               <Link to={"/"}>
@@ -48,7 +48,7 @@ const Cart = () => {
                   <p className="card-text">{`Total $${item.price * quantity
                     } | `}</p>
                 </div>
-                <button onClick={()=>removeItem(product)}>Eliminar</button>
+                <button onClick={()=>removeItem(item)}>Eliminar</button>
               </div>
             </>
           ))}

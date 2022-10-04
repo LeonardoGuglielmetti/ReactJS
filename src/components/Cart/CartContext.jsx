@@ -17,8 +17,8 @@ const CartContext = (props) => {
   const [cartItems, setCartItems] = useState([]);
 
 const removeItem = (itemRemove) => {
-  const removedCart = cart.filter(product => product !== itemRemove);
-  setCart(removedCart); 
+  const removedCart = cartItems.filter(product => product !== itemRemove);
+  setCartItems(removedCart); 
 }
 
   const sendOrder = async (totalPrice, buyerData) => {
