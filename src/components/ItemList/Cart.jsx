@@ -48,7 +48,7 @@ const Cart = () => {
                   <p className="card-text">{`Total $${item.price * quantity
                     } | `}</p>
                 </div>
-                <button onClick={()=>removeItem(item)}>Eliminar</button>
+                <button onClick={()=>removeItem(item.id)}>Eliminar</button>
               </div>
             </>
           ))}
