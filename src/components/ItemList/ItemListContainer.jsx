@@ -11,24 +11,22 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   
   useEffect (() => {
- 
 
     setLoading(true);
     const db = getFirestore();
     const itemsCollection = collection(db, "items");
-    getDocs(itemsCollection).then((snapshot)=> {
-      const data = snapshot.docs.map((doc) => ({
-        id: doc.id,
-      ...doc.data(),
+    const collectionFiltered = query(
+      collection(db, 'items'),
+      where('category', '==', `${name}`),
+    )
+    getDocs(!name ? itemsCollection : collectionFiltered)
+      .then((_snapshot_) => {
+        setItems(
+          _snapshot_.docs.map((_doc_) => ({ id: _doc_.id, ..._doc_.data() })),
+        )
+      })
+      .finally(() => setLoading(false))
 
-      }));
-      setItems(data);
-      setLoading(false);
-      
-    } );
-       
-     
-  
   }, [name]);
 
   if (loading) { return <Spinner/>;

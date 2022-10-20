@@ -3,17 +3,27 @@ import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import { GContext } from "../Cart/CartContext";
 
-const Cart = () => {
+const Cart = () => { 
+  const [buyer, setBuyer] = useState({name: '', email: '', phone: ''})
   const [totalPrice, setTotalPrice] = useState(0);
   const { cartItems, sendOrder, removeItem } = useContext(GContext);
+  
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const inputs = document.getElementsByTagName("input");
-    console.log(inputs[0]);
-    const data = Array.from(inputs).map((input, index) => input.value);
-    sendOrder(totalPrice, { name: data[0], mail: data[1], phone: data[2] });
-  };
+  e.preventDefault();
+  if(buyer.name === '' || buyer.email === '' || buyer.phone === '' ) {
+    alert('Informacion vacia')
+  } else {
+    sendOrder(totalPrice, buyer);
+  }
+};
 
+
+  const handleChange = (e) => {
+    setBuyer({
+      ...buyer,
+      [e.target.name]: e.target.value
+    })
+  }
   useEffect(() => {
     let total = 0;
     cartItems.forEach(({ item, quantity }) => {
@@ -69,15 +79,15 @@ const Cart = () => {
           <div className="row g-2">
             <div className="col-md-8">
               <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
-              <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Mike Johnson" />
+              <input type="text" name='name' onChange={handleChange} className="form-control" id="formGroupExampleInput" placeholder="Mike Johnson" />
             </div>
             <div className="col-md-8">
               <label htmlFor="inputEmail4" className="form-label ">Email</label>
-              <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+              <input type="email" name='email' onChange={handleChange} className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
             </div>
             <div className="col-md-8">
               <label htmlFor="inputCity" className="form-label">Telephone number</label>
-              <input type="tel" className="form-control" id="exampleFormControlInput1" placeholder="115869210" />
+              <input type="tel" name='phone' onChange={handleChange} className="form-control" id="exampleFormControlInput1" placeholder="115869210" />
             </div>
           </div>
           <button type="submit" className="btn btn-info m-3">

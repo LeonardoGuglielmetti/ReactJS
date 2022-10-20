@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-
   useEffect(() => {
     setLoading(true);
     const db = getFirestore();

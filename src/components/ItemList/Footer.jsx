@@ -1,5 +1,6 @@
 import React from 'react';
 import { CDBFooter, CDBFooterLink, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer = () => {
               <span className="ml-3 h5 font-weight-bold">Home</span>
             </a>
             <p className="my-3" style={{ width: '250px' }}>
-              Egar´s Room es una tienda online independiente, creada por y para personas que buscan sentirse identificadas
+              Leo´s Room es una tienda online independiente, creada por y para personas que buscan sentirse identificadas
             </p>
             <CDBBox display="flex" className="mt-4">
               <CDBBtn flat color="dark">
@@ -31,10 +32,10 @@ export const Footer = () => {
               Products
             </p>
             <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
-              <CDBFooterLink href="/">T-Shirts</CDBFooterLink>
-              <CDBFooterLink href="/">Pants</CDBFooterLink>
-              <CDBFooterLink href="/">Jackets</CDBFooterLink>
-              <CDBFooterLink href="/">Shoes</CDBFooterLink>
+            <CDBFooterLink href="/category/tshirts">T-Shirts</CDBFooterLink>
+              <CDBFooterLink href="/category/pants">Pants</CDBFooterLink>
+              <CDBFooterLink href="/category/jackets">Jackets</CDBFooterLink>
+              <CDBFooterLink href="/category/shoes">T-Shoes</CDBFooterLink>
             </CDBBox>
           </CDBBox>
           <CDBBox>
@@ -58,7 +59,7 @@ export const Footer = () => {
             </CDBBox>
           </CDBBox>
         </CDBBox>
-        <small className="text-center mt-5">&copy; Egar´s Room, 2022. All rights reserved.</small>
+        <small className="text-center mt-5">&copy; Leo´s Room, 2022. All rights reserved.</small>
       </CDBBox>
     </CDBFooter>
   );
